@@ -127,7 +127,7 @@ export default function ChatModal({openChatModal}) {
         <div className="chat-modal-wrp">
             <div className="chat-header">
                 <div className="profile">
-                    <img src={`${process.env.PUBLIC_URL}./profile-small.png`} alt="profile"/>
+                    <img src={`${process.env.PUBLIC_URL}/profile-small.png`} alt="profile"/>
                 </div>
                 <div className="header-content-wrp">
                     <h6>Dikshita Bot</h6>
