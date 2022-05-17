@@ -13,10 +13,10 @@ export default function Contact() {
                 <a href="mailto:dikshitakasodariya26@gmail.com" target="_blank"><EmailSvg/></a>
             </div>
             <div className="pf-contact-col">
-                <a href="" target="_blank"><GithubContactSvg/></a>
+                <a href="https://github.com/dikshitak/" target="_blank"><GithubContactSvg/></a>
             </div>
             <div className="pf-contact-col">
-                <a href="" target="_blank"><LinkedInSvg/></a>
+                <a href="https://www.linkedin.com/in/dikshita-kashodriya/" target="_blank"><LinkedInSvg/></a>
             </div>
         </div>
     </section>
