@@ -26,7 +26,7 @@ export default function Projects() {
                         <h4>Photo Editor</h4>
                         <p>Photo Editor makes image creation super easy with premade templates, options to upload image/logo of your choice and even edit the text that appears on the image. The created image can also be downloaded in various sizes.</p>
                         <div className="pj-links-wrp">
-                            <a href="https://dikshitak.github.io/photo-editor/" target="_blank" className="pj-redirection pj-link"><ProjectsLink/></a>
+                            <a href="https://dikshitak.github.io/photo-editor-web-app/" target="_blank" className="pj-redirection pj-link"><ProjectsLink/></a>
                             <a href="https://github.com/dikshitak/photo-editor-web-app" target="_blank" className="pj-git pj-link"><ProjectsGit/></a>
                         </div>
                     </div>
