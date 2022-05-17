@@ -1,0 +1,33 @@
+.pf-contact-row {
+    margin: 0 -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pf-contact-col {
+        padding: 0 10px;
+        svg {
+            width: 48px;
+            height: 48px;
+        }
+        .fill-css {
+            fill: var(--primary-text-color);
+        }
+        a {
+            display: block;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .pf-contact-row {
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .pf-contact-row {
+        margin-bottom: 100px;
+    }
+}

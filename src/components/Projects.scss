@@ -1,0 +1,59 @@
+.pf-projects {
+    display: flex;
+    flex-direction: column;
+    margin: 0 -5px;
+    .pj-card {
+        margin: 0 5px 10px 5px;
+        padding: 40px;
+        background: var(--secondary-bg-color);
+        position: relative;
+        overflow: hidden;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .pj-content-wrp {
+            position: relative;
+            .pj-more-info {
+                position: absolute;
+                right: -30px;
+                top: -20px;
+                cursor: pointer;
+                width: 24px;
+            }
+        }
+        h4 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        p {
+            font-size: 16px;
+            color: var(--secondary-text-color);
+            line-height: 26px;
+            margin-bottom: 20px;
+        }
+        h6 {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .pj-links-wrp {
+            display: flex;
+            .pj-link {
+                width: 30px;
+                height: 30px;
+                margin-right: 20px;
+                .git-link {
+                    fill: var(--primary-text-color);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .pf-projects .pj-card {
+        padding: 30px
+    }
+}

@@ -1,0 +1,68 @@
+.contact-form-wrp {
+  position: relative;
+  label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    width: 100%;
+    margin-bottom: 8px;
+    display: block;
+  }
+  input,textarea {
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    background: var(--secondary-bg-color);
+    color: var(--primary-text-color);
+    width: 100%;
+    display: block;
+  }
+  .submit-btn {
+    display: inline-block;
+    background: var(--primary-text-color);
+    color: var(--primary-bg-color);
+    width: auto;
+    padding: 0 30px;
+    height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin: 15px 0;
+    font-weight: 700;
+    line-height: 40px;
+  }
+  p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    display: inline;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      letter-spacing: 4px;
+    }
+  }
+  .thank-you {
+    color: var(--secondary-text-color);
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+  }
+  h6 {
+    font-size: 20px;
+    color: var(--primary-text-color);
+    text-align: center;
+    margin: 40px 0 20px;
+    line-height: 30px;
+    font-weight: 700;
+  }
+}
