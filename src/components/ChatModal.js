@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './ChatModal.scss';
 import ContactForm from './ContactForm';
 
@@ -8,26 +8,37 @@ export default function ChatModal({openChatModal}) {
     const [chatList, setChatList] = useState([]);
     const [isHire, setHireOptions] = useState(false);
     const [isContact, setIsContact] = useState(false);
+    const scrollDiv = useRef(null);
     
     useEffect(() => {
         setTimeout(()=> {
             setSuggestion(true);
+            scrollHandler();
         },4000);
     },[]);
+
+    const scrollHandler = () => {
+        setTimeout(function() {
+            scrollDiv.current.scrollTop = scrollDiv.current.scrollHeight;
+        }, 1000 );
+    }
 
     const changeThemeHandler = () => {
         setSuggestion(false);
         setChatList([...chatList, <ChangeHumanTheme/>]);
+        scrollHandler();
         setTimeout(() => {
             setChatList((prevChatList)=> ([...prevChatList, <ChangeBotTheme/>]));
+            scrollHandler();
         },3000);
         setTimeout(()=> {
             const isOsDark = document.querySelector('html').dataset.theme;
             document.querySelector('html').dataset.theme = `${isOsDark==='theme-dark' ? 'theme-light' : 'theme-dark'}`;
-            
+            scrollHandler();
         },6000);
         setTimeout(()=> {
             setSuggestion(true);
+            scrollHandler();
         },8000);
     }
 
@@ -72,11 +83,14 @@ export default function ChatModal({openChatModal}) {
     const sayHelloHandler = () => {
         setSuggestion(false);
         setChatList([...chatList, <SayHelloHuman/>]);
+        scrollHandler();
         setTimeout(() => {
             setChatList((prevChatList)=> ([...prevChatList, <SayHelloBot/>]));
+            scrollHandler();
         },3000);
         setTimeout(()=> {
             setSuggestion(true);
+            scrollHandler();
         },9000);
     }
 
@@ -101,17 +115,21 @@ export default function ChatModal({openChatModal}) {
     const hireHandler = () => {
         setSuggestion(false);
         setChatList([...chatList, <SayHireHuman/>]);
+        scrollHandler();
         setTimeout(() => {
             setChatList((prevChatList)=> ([...prevChatList, <SayHireChat/>]));
+            scrollHandler();
         },2000);
         setTimeout(()=> {
             setHireOptions(true);
+            scrollHandler();
         },7000);
     }
 
     const showSuggestion = () => {
         setHireOptions(false);
         setSuggestion(true);
+        scrollHandler();
     }
 
     const closeContactForm = () => {
@@ -120,6 +138,7 @@ export default function ChatModal({openChatModal}) {
         setHireOptions(false);
         setTimeout(()=> {
             setSuggestion(true);
+            scrollHandler();
         },4000);
     }
 
@@ -140,7 +159,7 @@ export default function ChatModal({openChatModal}) {
                 </div>
             </div>
             {!isContact && (
-                <div className="chat-message clearfix">
+                <div className="chat-message clearfix" ref={scrollDiv}>
                     <div className="message-bot-wrp">
                         <div className="message-bot">Hey, I'm Dikshita Bot<span role="img" aria-label="hi">👋</span></div>
                         <div className="message-bot">How can I help you?</div>
@@ -158,7 +177,6 @@ export default function ChatModal({openChatModal}) {
                 </div>
             )}
             {isContact && <ContactForm closeContactForm={closeContactForm}/>}
-            
         </div>
     )
 }

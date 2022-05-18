@@ -46,6 +46,7 @@
     padding: 15px;
     height: calc(100% - 86px);
     overflow: auto;
+    scroll-behavior: smooth;
     .suggestions-wrp {
         text-align: left;
     }
